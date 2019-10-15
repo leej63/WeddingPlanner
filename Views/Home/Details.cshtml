@@ -1,0 +1,19 @@
+@model WeddingPlanner.Models.Wedding
+
+<div class="row">
+    <div class="col-9">
+        <h2>@Model.WedderOne's and @Model.WedderTwo's Wedding</h2>
+    </div>
+    <div class="col">
+        <a href="/logout" class="mx-4" style="float: right;">Log Out</a>
+        <a href="/dashboard" class="mx-4" style="float: right;">Dashboard</a>
+    </div>
+</div>
+<h4>Date: @Model.Date.ToString("MMMM dd, yyyy")</h4>
+<h6>Guests:</h6>
+<ul>
+    @foreach(Attendee guest in Model.Atendees)
+    {
+        <li>@guest.User.FirstName @guest.User.LastName</li>
+    }
+</ul>
